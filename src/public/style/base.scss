@@ -1,0 +1,8 @@
+.form {
+    @include flex(column);
+    max-width: 600px;
+}
+
+.hidden {
+    @include hidden;
+}

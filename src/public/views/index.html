@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Evaluator</title>
+</head>
+<body>
+    <header class="header">
+        <h1 class="header__title">News Evaluator</h1>
+    </header>
+    <form action="/evaluate" method="POST" class="form">
+        <h2 class="form__heading">Please Choose Your Evaluation Method</h2>
+        <label for="method">Would you like to manually enter your text or provide a URL?</label>
+        <ul class="radio__list">
+            <li class="radio__List--item">
+                <input type="radio" name="method" id="form__radio--text" class="form__radio" value="Text" data-toggle="textarea__block" checked>Enter Text Manually
+            </li>
+            <li class="radio__List--item">
+                <input type="radio" name="method" id="form__radio--text" class="form__radio" value="URL" data-toggle="url__block">URL
+            </li>
+        </ul>
+        
+        <div class="form__block" id="textarea__block">
+            <label for="text">Enter your text to evaluate here</label>
+            <textarea name="text" value="" id="form__textarea--main" class="form__textarea" cols="30" rows="10"></textarea>
+        </div>
+        <div class="hidden form__block" id="url__block">
+            <label for="url">Enter the url of the news story you would like to evaluate</label>
+            <input type="text" name="url" id="form__text--url" class="form__text">
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+    <footer class="footer">
+
+    </footer>
+</body>
+</html>
