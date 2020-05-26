@@ -16,7 +16,7 @@ exports.getHomepage = (req, res) => {
 
 exports.getAylien = async (req, res) => {
     let sentiment;
-    if (req.body.method.toLowerCase() == "text") {
+    if (req.body.method == "Text") {
         sentiment = { text: req.body.text }
     } else {
         sentiment = { url: req.body.url }

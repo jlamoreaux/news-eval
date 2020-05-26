@@ -1,8 +1,113 @@
+.index {
+    font-family: $primary-font;
+}
+
+.main {
+    background-color: $background-color;
+    max-width: 800px;
+    position: relative;
+    margin: auto;
+    padding: 10px;
+}
+
 .form {
+    margin-top: 10px;
     @include flex(column);
     max-width: 600px;
+    margin: auto;
+
+    .form__heading {
+        margin: 0;
+        text-align: center;
+        font-style: italic;
+        font-weight: 300;
+        font-size: 2em;
+    }
+
+    .eval__section {
+        border: 1px solid darkgrey;
+    }
+
+    .for--radio {
+        display: flex;
+        height: 100px;
+        width: 100px;
+        cursor: pointer;
+        background-color: grey;
+        margin: 10px;
+        z-index: 9;
+        box-shadow: 2px 0px 7px;
+        transition: background-color .3s;
+        .label__inner {
+            margin:auto;
+            text-align: center;
+            @include flex(column);
+        }
+
+        &:hover {
+            background-color: white;
+        }
+
+        .label__inner:before {
+            font-family: $icons;
+            font-size: 2em;
+        }
+
+        &[for="form__radio--text"] {
+            .label__inner:before {
+                content: 'subject'
+            }
+        }
+        &[for="form__radio--url"] {
+            .label__inner:before {
+                content: 'link'
+            }
+        }
+    }
+    .form__radio {
+        width: 0;
+        height: 0;
+        display: none;
+        position: relative;
+
+        &:checked + .for--radio {
+            background-color: red;
+
+            &:hover {
+                background-color: white;
+            }
+        }
+    }
+}
+
+.submit__area {
+    @include flex();
+    #submit {
+        margin: 10px;
+        width: 140px;
+        height: 40px;
+        margin: auto;
+    }
+}
+
+.block__container {
+    // height: 200px;
+}
+
+.form__block {
+    @include flex(column);
+    position: relative;
+}
+
+#url__block {
+    top: -161px;
 }
 
 .hidden {
     @include hidden;
+}
+
+.radio__list {
+    @include styled-list;
+    @include flex(row, wrap, center);
 }

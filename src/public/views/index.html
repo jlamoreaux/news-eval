@@ -5,34 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News Evaluator</title>
 </head>
-<body>
-    <header class="header">
-        <h1 class="header__title">News Evaluator</h1>
-    </header>
-    <form action="/evaluate" method="POST" class="form">
-        <h2 class="form__heading">Please Choose Your Evaluation Method</h2>
-        <label for="method">Would you like to manually enter your text or provide a URL?</label>
-        <ul class="radio__list">
-            <li class="radio__List--item">
-                <input type="radio" name="method" id="form__radio--text" class="form__radio" value="Text" data-toggle="textarea__block" checked>Enter Text Manually
-            </li>
-            <li class="radio__List--item">
-                <input type="radio" name="method" id="form__radio--text" class="form__radio" value="URL" data-toggle="url__block">URL
-            </li>
-        </ul>
-        
-        <div class="form__block" id="textarea__block">
-            <label for="text">Enter your text to evaluate here</label>
-            <textarea name="text" value="" id="form__textarea--main" class="form__textarea" cols="30" rows="10"></textarea>
-        </div>
-        <div class="hidden form__block" id="url__block">
-            <label for="url">Enter the url of the news story you would like to evaluate</label>
-            <input type="text" name="url" id="form__text--url" class="form__text">
-        </div>
-        <button type="submit">Submit</button>
-    </form>
-    <footer class="footer">
+<body class="index">
+    <main class="main">
+        <header class="header">
+            <div class="flash__container"><span id="flash"></span></div>
+            <h1 class="header__title">The Daily Evaluator</h1>
+            <div class="tagline">Determines If News Is Subjective Or Objective</div>
+        </header>
+        <!-- <form action="/evaluate" method="POST" class="form"> -->
+        <form class="form" id="form">
+            <div class="eval__section">
+                <h2 class="form__heading">Please Choose Your Evaluation Method</h2>
+                <ul class="radio__list">
+                    <li class="radio__list--item">
+                        <input type="radio" name="method" id="form__radio--text" class="form__radio" value="Text" data-toggle="textarea__block" checked>
+                        <label class="for--radio" for="form__radio--text">
+                            <span class="label__inner">Text</span>
+                        </label>
+                    </li>
+                    <li class="radio__list--item">
+                        <input type="radio" name="method" id="form__radio--url" class="form__radio" value="URL" data-toggle="url__block">
+                        <label class="for--radio" for="form__radio--url">
+                            <span class="label__inner">URL</span>
+                        </label>
+                    </li>
+                </ul>   
+            </div>
+            
+            <div class="block__container">
+                <div class="form__block" id="textarea__block">
+                    <label for="text">Enter your text to evaluate here</label>
+                    <textarea name="text" value="" id="form__textarea--main" class="form__textarea form__input" cols="30" rows="10"></textarea>
+                </div>
+                <div class="hidden form__block" id="url__block">
+                    <label for="url">Enter the url of the news story you would like to evaluate</label>
+                    <input type="text" name="url" id="form__text--url" class="form__text form__input">
+                </div>
+                <div class="submit__area">
+                    <button id="submit">Submit</button>
+                </div>
 
-    </footer>
+            </div>
+        </form>
+        <article class="results__block" id="results">
+
+        </article>
+        <footer class="footer">
+
+        </footer>
+    </main>
+    <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+    </script>
 </body>
 </html>

@@ -1,0 +1,48 @@
+.header {
+    margin-bottom: 10px;
+
+    .flash__container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include flex();
+        width: 100%;
+        #flash {
+            width: 100%;
+            text-align: center;
+            padding: 3px;
+        }
+        .error {
+            border: 5px solid rgb(255, 0, 0);
+        }
+
+        .warning {
+            border: 5px solid rgb(255, 165, 0);
+        }
+
+        .success {
+            border: 5px solid rgb(0, 128, 0);
+        }
+    }
+
+    .header__title {
+        font-family: $title-font;
+        font-size: 5em;
+        font-weight: 300;
+        text-align: center;
+        margin: .25em .5em 0;
+    }
+
+    .tagline {
+        font-size: 0.9em;
+        font-style: italic;
+        font-weight: 300;
+        text-align: center;
+        padding: 4px;
+        border-bottom: 2px solid darkgrey;
+        border-top: 2px solid darkgrey;
+        position: relative;
+        margin: 0 1em;
+
+    }
+}
