@@ -1,7 +1,6 @@
 'use strict';
 const validUrl = require('./src/public/js/helpers.js').validURL;
 const createFlash = require('./src/public/js/index.js').createFlash;
-const $ = require('./src/public/js/helpers').$;
 
 test('checks if URL is valid format or not', () => {
     const url = "http://www.google.com";

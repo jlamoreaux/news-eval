@@ -35,4 +35,5 @@ function validURL(str) {
   return !!pattern.test(str);
 }
 
-export { $, $$, validURL }
+export default { $, $$, validURL };
+export { validURL }
