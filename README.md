@@ -7,7 +7,7 @@ Web app that analyzes a news story from a URL or manually provided text for subj
 1. Fork the repository
 2. Install dependencies by running `npm install`
 3. Generate webpack by running `npm run build-prod`
-4. Get API credentials from (Aylien)(https://developer.aylien.com/)
+4. Get API credentials from [Aylien](https://developer.aylien.com/)
 5. Create .env file and add the following:
     - PORT=7070
     - AYLIENKEY=[YOUR API KEY]
