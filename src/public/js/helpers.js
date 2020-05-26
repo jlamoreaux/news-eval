@@ -4,7 +4,7 @@
  * @param {string} elem - an identfier for element in the DOM to be selected
  * @returns {Element}
  */
-const $ = (elem) => {
+export const $ = (elem) => {
     return document.querySelector(elem);
 }
 
@@ -13,7 +13,7 @@ const $ = (elem) => {
  * @param {String} elem - an identfier for elements in the DOM to be selected
  * @returns {Array} - Array of elements
  */
-const $$ = (elem) => {
+export const $$ = (elem) => {
     return [...document.querySelectorAll(elem)];
 }
 
@@ -22,7 +22,7 @@ const $$ = (elem) => {
  * https://stackoverflow.com/questions/5717093/check-if-a-javascript-string-is-a-url
  * @param {String} str - String to be verified as a URL 
  */
-function validURL(str) {
+export function validURL(str) {
   var pattern = new RegExp(
     "^(https?:\\/\\/)?" + // protocol
     "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|" + // domain name
@@ -35,5 +35,4 @@ function validURL(str) {
   return !!pattern.test(str);
 }
 
-export default { $, $$, validURL };
-export { validURL }
+// export { $, $$, validURL }

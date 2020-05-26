@@ -1,6 +1,4 @@
-import $ from './helpers';
-import $$ from './helpers';
-import validURL from './helpers';
+import { $, $$, validURL } from './helpers';
 import '../style/main.scss';
 const apiURL = "/evaluate";
 
